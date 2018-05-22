@@ -3,6 +3,7 @@
 namespace tests\models;
 
 use app\models\User;
+use PHPUnit\Framework\TestResult;
 
 class UserTest extends \Codeception\Test\Unit
 {
@@ -40,5 +41,4 @@ class UserTest extends \Codeception\Test\Unit
         expect_that($user->validatePassword('admin'));
         expect_not($user->validatePassword('123456'));        
     }
-
 }

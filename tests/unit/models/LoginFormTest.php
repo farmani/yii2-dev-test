@@ -2,7 +2,8 @@
 
 namespace tests\models;
 
-use app\models\LoginForm;
+use app\models\forms\LoginForm;
+use PHPUnit\Framework\TestResult;
 
 class LoginFormTest extends \Codeception\Test\Unit
 {
@@ -47,5 +48,4 @@ class LoginFormTest extends \Codeception\Test\Unit
         expect_not(\Yii::$app->user->isGuest);
         expect($this->model->errors)->hasntKey('password');
     }
-
 }

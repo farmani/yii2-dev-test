@@ -2,6 +2,9 @@
 
 namespace tests\models;
 
+use app\models\forms\ContactForm;
+use PHPUnit\Framework\TestResult;
+
 class ContactFormTest extends \Codeception\Test\Unit
 {
     private $model;
@@ -13,7 +16,7 @@ class ContactFormTest extends \Codeception\Test\Unit
     public function testEmailIsSentOnContact()
     {
         /** @var ContactForm $model */
-        $this->model = $this->getMockBuilder('app\models\ContactForm')
+        $this->model = $this->getMockBuilder('app\models\forms\ContactForm')
             ->setMethods(['validate'])
             ->getMock();
 
