@@ -41,9 +41,9 @@ AppAsset::register($this);
             ['label' => 'Home', 'url' => ['/site/index']],
             ['label' => 'About', 'url' => ['/site/about']],
             ['label' => 'Contact', 'url' => ['/site/contact']],
-            Yii::$app->user->isGuest ? (
-                ['label' => 'Login', 'url' => ['/site/login']]
-            ) : (
+            ['label' => 'Clients', 'url' => ['/client/index'],'visible' => !Yii::$app->user->isGuest,],
+            ['label' => 'Contracts', 'url' => ['/contract/index'],'visible' => !Yii::$app->user->isGuest],
+            Yii::$app->user->isGuest ? (['label' => 'Login', 'url' => ['/site/login']]) : (
                 '<li>'
                 . Html::beginForm(['/site/logout'], 'post')
                 . Html::submitButton(
