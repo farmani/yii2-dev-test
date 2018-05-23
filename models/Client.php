@@ -79,6 +79,6 @@ class Client extends \app\models\base\Client
      */
     public function getSellingContracts()
     {
-        return $this->hasMany(Contract::class, ['buyer_id' => 'id']);
+        return $this->hasMany(Contract::class, ['seller_id' => 'id']);
     }
 }
